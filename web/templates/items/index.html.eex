@@ -1,27 +1,35 @@
-<%= link "Create Item", to: items_path(@conn, :new), class: "button" %>
+<div>
+  <%= @current_user.name %>
+</div>
 
-<table>
-  <thead>
+<div>
+  <%= link "Create Item", to: items_path(@conn, :new), class: "button" %>
+</div>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </thead>
+    <%= for item <- @items do %>
     <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Quantity</th>
-  </thead>
-  <%= for item <- @items do %>
-  <tr>
-    <td>
-      <%= item.name %>
-    </td>
-    <td>
-      <%= item.price %>
-    </td>
-    <td>
-      <%= item.quantity %>
-    </td>
-    <td>
-      <%= link "Edit", to: items_path(@conn, :edit, item) %>
-      <%= link "Delete", to: items_path(@conn, :delete, item), method: :delete %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+      <td>
+        <%= item.name %>
+      </td>
+      <td>
+        <%= item.price %>
+      </td>
+      <td>
+        <%= item.quantity %>
+      </td>
+      <td>
+        <%= link "Edit", to: items_path(@conn, :edit, item) %>
+        <%= link "Delete", to: items_path(@conn, :delete, item), method: :delete %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
