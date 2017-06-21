@@ -1,7 +1,7 @@
 defmodule ShopTime.Item do
   use ShopTime.Web, :model
 
-  schema "item" do
+  schema "items" do
     field :name, :string
     field :price, :integer
     field :quantity, :integer

@@ -1,4 +1,4 @@
-defmodule ShopTime.ItemsController do
+defmodule ShopTime.ItemController do
   use ShopTime.Web, :controller
   alias ShopTime.Item
   require IEx
@@ -26,7 +26,7 @@ defmodule ShopTime.ItemsController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Item Created")
-        |> redirect(to: items_path(conn, :index))
+        |> redirect(to: item_path(conn, :index))
       {:error, changeset} ->
         render conn, "new.html", changeset: changeset
     end
@@ -47,7 +47,7 @@ defmodule ShopTime.ItemsController do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Item Updated")
-        |> redirect(to: items_path(conn, :index))
+        |> redirect(to: item_path(conn, :index))
       {:error, changeset} ->
         render conn, "edit.html", changeset: changeset, item: old_item
     end
@@ -58,6 +58,6 @@ defmodule ShopTime.ItemsController do
 
     conn
     |> put_flash(:info, "Item Deleted")
-    |> redirect(to: items_path(conn, :index))
+    |> redirect(to: item_path(conn, :index))
   end
 end

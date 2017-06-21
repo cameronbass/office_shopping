@@ -38,7 +38,7 @@ defmodule ShopTime.Router do
     pipe_through :protected # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/items", ItemsController
+    resources "/items", ItemController
   end
 
   # Other scopes may use custom stacks.
