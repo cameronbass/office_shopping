@@ -14,6 +14,7 @@ defmodule ShopTime do
       supervisor(ShopTime.Endpoint, []),
       # Start your own worker by calling: ShopTime.Worker.start_link(arg1, arg2, arg3)
       # worker(ShopTime.Worker, [arg1, arg2, arg3]),
+      supervisor(ShopTime.Presence, []),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
