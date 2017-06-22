@@ -23,10 +23,9 @@ config :logger, level: :info
 # Configure your database
 config :shop_time, ShopTime.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: System.get_env("DATABASE_USERNAME"),
-  password: System.get_env("DATABASE_PASSWORD"),
-  database: "shop_time_prod",
-  pool_size: 20
+  url: System.get_env("DATABASE_URL"),
+  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+  ssl: true
 
 # config :shop_time, ShopTime.Repo,
 #   adapter: Ecto.Adapters.Postgres,
