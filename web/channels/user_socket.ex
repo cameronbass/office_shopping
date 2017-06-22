@@ -1,12 +1,14 @@
 defmodule ShopTime.UserSocket do
   use Phoenix.Socket
+  require IEx
 
   ## Channels
   channel "room:*", ShopTime.RoomChannel
+  channel "shop:*", ShopTime.ShopChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
-    # timeout: 45_000 
+    # timeout: 45_000
   # transport :longpoll, Phoenix.Transports.LongPoll
 
   # Socket params are passed from the client and can
@@ -25,6 +27,10 @@ defmodule ShopTime.UserSocket do
   # end
 
   def connect(%{"user" => user}, socket) do
+    {:ok, assign(socket, :user, user)}
+  end
+
+  def shop(%{"user" => user}, socket) do
     {:ok, assign(socket, :user, user)}
   end
 
