@@ -16,8 +16,9 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-            <li><%= link "Sign Out", to: session_path(@conn, :delete), method: :delete %></li>
+            <li><%= link "Home", to: item_path(@conn, :index) %></li>
+            <li><a><%= link "Sign Out", to: session_path(@conn, :delete), method: :delete %></a></li>
+            <li><a><%= link "Purchase", to: purchase_path(@conn, :index) %></a></li>
           </ul>
         </nav>
         <span class="logo"></span>
