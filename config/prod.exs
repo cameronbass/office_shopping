@@ -1,11 +1,4 @@
 use Mix.Config
-
-config :hello_phoenix, HelloPhoenix.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  url: System.get_env("DATABASE_URL"),
-  pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
-  ssl: true
-
 # For production, we configure the host to read the PORT
 # from the system environment. Therefore, you will need
 # to set PORT=80 before running your server.
@@ -19,12 +12,19 @@ config :hello_phoenix, HelloPhoenix.Repo,
 # which you typically run after static files are built.
 config :shop_time, ShopTime.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "ci-shoppers.herokuapp.com", port: 80],
+  url: [host: "ci-shoppers.herokuapp.com", port: 443],
+  force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+# config :shop_time, ShopTime.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   url: System.get_env("DATABASE_URL"),
+#   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+#   ssl: true
 
 # ## SSL Support
 #
