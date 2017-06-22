@@ -6,6 +6,7 @@
     "watch": "brunch watch --stdin"
   },
   "dependencies": {
+    "express": "4.15.3",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html"
   },
@@ -15,12 +16,16 @@
     "clean-css-brunch": "~2.0.0",
     "css-brunch": "~2.0.0",
     "javascript-brunch": "~2.0.0",
-    "uglify-js-brunch": "~2.0.1",
-    "phoenix": "file:../deps/phoenix"
+    "uglify-js-brunch": "~2.0.1"
   },
   "engines": {
     "name": "Shop Time",
     "node": "8.1.2",
     "npm": "5.0.3"
-  }
+  },
+  "files": [
+    "LICENSE.md",
+    "package.json",
+    "priv/static/phoenix.js"
+  ]
 }
