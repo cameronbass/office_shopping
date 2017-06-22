@@ -1,4 +1,6 @@
 defmodule ShopTime.Presence do
+  # use Phoenix.Presence, otp_app: ShopTime,
+  #                       pubsub_server: ShopTime.PubSub
   @moduledoc """
   Provides presence tracking to channels and processes.
 
