@@ -23,6 +23,7 @@
   "description": "A Collective Idea Shopping ap",
   "version": "1.0.0",
   "engines": {
-    "node": "8.1.2"
+    "node": "8.1.2",
+    "npm": "5.0.3"
   }
 }
