@@ -16,6 +16,7 @@
       </td>
       <td>
         <%= item.quantity %>
+        
       </td>
     </tr>
     <% end %>
