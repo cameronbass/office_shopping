@@ -20,6 +20,14 @@ config :shop_time, ShopTime.Endpoint,
 # Do not print debug messages in production
 config :logger, level: :info
 
+# Configure your database
+config :shop_time, ShopTime.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("DATABASE_USERNAME"),
+  password: System.get_env("DATABASE_PASSWORD"),
+  database: "shop_time_prod",
+  pool_size: 20
+
 # config :shop_time, ShopTime.Repo,
 #   adapter: Ecto.Adapters.Postgres,
 #   url: System.get_env("DATABASE_URL"),
@@ -65,4 +73,3 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
