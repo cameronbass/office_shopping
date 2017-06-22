@@ -43,6 +43,7 @@ let render = (presences) => {
       </li>
     `)
     .join("")
+
 }
 
 // Channels
