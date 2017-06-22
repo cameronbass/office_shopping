@@ -17,4 +17,12 @@
     "javascript-brunch": "~2.0.0",
     "uglify-js-brunch": "~2.0.1"
   }
+
+  {
+  "name": "Shop Time",
+  "description": "A Collective Idea Shopping ap",
+  "version": "1.0.0",
+  "engines": {
+    "node": "8.1.2"
+  }
 }
