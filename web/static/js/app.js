@@ -17,6 +17,7 @@ import {Socket, Presence} from "phoenix"
 // Socket
 let user = document.getElementById("User").innerText
 let socket = new Socket("/socket", {params: {user: user}})
+debugger;
 socket.connect()
 
 // Presence
@@ -43,18 +44,17 @@ let render = (presences) => {
       </li>
     `)
     .join("")
-
 }
 
 // Channels
 let room = socket.channel("room:lobby", {})
 room.on("presence_state", state => {
-  Presence.syncState(presences, state)
+  presences = Presence.syncState(presences, state)
   render(presences)
 })
 
 room.on("presence_diff", diff => {
-  Presence.syncDiff(presences, diff)
+  presences = Presence.syncDiff(presences, diff)
   render(presences)
 })
 
