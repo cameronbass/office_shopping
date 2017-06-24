@@ -16,7 +16,7 @@
       </td>
       <td>
         <%= item.quantity %>
-        
+
       </td>
     </tr>
     <% end %>
@@ -27,6 +27,11 @@
   <div class="col-md-12 alert alert-info">
     Hello, <span id="User"><%= @current_user.name %></span>!
   </div>
+
+  <div class="shopping-carts">
+    Loading Shoppers....
+  </div>
+
   <div class="col-md-8">
     <h2>Messages</h2>
     <input type="text" id="NewMessage" placeholder="Type and press enter..." class="form-control">
